@@ -1,2 +1,2 @@
 FROM tomcat
-COPY my-app.jar /usr/local/tomcat/webapps/my-app.jar
+COPY /var/lib/jenkins/workspace/project1 /usr/local/tomcat/webapps/my-app.jar
