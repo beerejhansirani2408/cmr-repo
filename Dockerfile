@@ -1,2 +1,2 @@
 FROM tomcat
-COPY ROOT.war /usr/local/tomcat/webapps/
+RUN "cp my-app.jar /usr/local/tomcat/webapps/my-app.jar"
