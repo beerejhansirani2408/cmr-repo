@@ -14,7 +14,7 @@ pipeline{
      stage("Building image"){
        steps{
           sh "docker build -t cmr-repo/myapp:1.0 ."
-          sh "docker run -dt ubuntu-tomcat:1.0 /bin/bash"
+          sh "docker run -dt cmr-repo/myapp:1.0 /bin/bash"
           }
         }
       }
