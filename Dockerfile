@@ -1,3 +1,3 @@
 FROM tomcat
 LABEL Author ="cmr-repo/myapp"
-COPY /var/lib/jenkins/workspace/samplepro /usr/local/tomcat/webapps/my-app.jar
+COPY /usr/local/tomcat/webapps/my-app.jar /var/lib/jenkins/workspace/samplepro 
