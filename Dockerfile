@@ -1,4 +1,4 @@
-FROM tomcat
+FROM ubuntu
 RUN apt update -y
 RUN apt install tomcat9 -y
 LABEL Author ="cmr-repo/myapp"
