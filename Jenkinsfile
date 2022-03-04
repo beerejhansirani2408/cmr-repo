@@ -13,7 +13,7 @@ pipeline{
             }
      stage("Building image"){
        steps{
-          sh "docker build -t cmr-repo/myapp:1.0 -f Dockerfile"
+          sh "docker build -t cmr-repo/myapp:1.0 ."
           sh "docker run -dt cmr-repo/myapp:1.0 /bin/bash"
           }
         }
