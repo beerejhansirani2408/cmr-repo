@@ -1,4 +1,4 @@
 FROM ubuntu
-RUN apt update -y
-RUN apt install tomcat9 -y
-RUN cp /var/lib/jenkins/workspace/cmr-repo/target/my-app.jar /var/lib/tomcat8/webapps/ROOT/my-app.jar
+CMD apt update -y
+CMD apt install tomcat9 -y
+CMD cp /var/lib/jenkins/workspace/cmr-repo/target/my-app.jar /var/lib/tomcat8/webapps/ROOT/my-app.jar
