@@ -16,13 +16,8 @@ pipeline{
           sh "docker build -t cmr-repo/myapp:1.0 ."
           sh "docker run -dt cmr-repo/myapp:1.0 /bin/bash"
           sh "docker tag cmr-repo/myapp:1.0 jhansirani408/cmr-repo:1.0"
-     stage('Push image') {
-       steps{
-          docker.withRegistry('https://registry.hub.docker.com', 'git') {            
-          app.push("jhansirani408/cmr-repo:1.0")            
-                }
-              }    
-            }
+          sh "docker credentialsId: 'dockerhub', url: 'https://hub.docker.com/u/jhansirani408'"
+          sh "docker push jhansirani408/cmr-repo:1.0"
           }
         }
       }
