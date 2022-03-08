@@ -14,6 +14,7 @@ pipeline{
      stage("Building image"){
        steps{
           sh "docker build -t cmr-repo/myapp:1.0 ."
+          sh "docker run -dt cmr-repo/myapp:1.0"
           sh "docker tag cmr-repo/myapp:1.0 jhansirani408/cmr-repo:1.0"
           sh "docker push jhansirani408/cmr-repo:1.0"
                   }
