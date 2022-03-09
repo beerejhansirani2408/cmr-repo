@@ -16,9 +16,14 @@ pipeline{
           sh "docker build -t cmr-repo/myapp:1.0 ."
           sh "docker run -dt cmr-repo/myapp:1.0"
           sh "docker tag cmr-repo/myapp:1.0 jhansirani408/cmr-repo:1.0"
-          sh "docker push jhansirani408/cmr-repo:1.0"
-                  }
-                }
-              }
-            }
+         stage("Docker Push"){
+          withCredentials([string(credentialsId: 'DOCKER_HUB_CREDENTIALS', variable: 'DOCKER_HUB_CREDENTIALS')]) {  
+            sh "docker login -u jhansirani408 -p ${DOCKER_HUB_CREDENTIALS}" 
+            sh "docker push jhansirani408/cmr-repo:1.0"
+               }
+             }
+           }
+        }
+     }
+  }
              
