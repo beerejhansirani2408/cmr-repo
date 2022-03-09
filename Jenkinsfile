@@ -6,12 +6,12 @@ pipeline{
             git credentialsId: 'github', url: 'https://github.com/beerejhansirani2408/cmr-repo.git'
            }
           }
-     stage("Maven Build"){
+     stage("Maven clean Build"){
        steps{
             sh "mvn clean package"
              }
             }
-     stage("Building image"){
+     stage("Building Docker Image"){
        steps{
           sh "docker build -t cmr-repo/myapp:1.0 ."
           sh "docker run -dt cmr-repo/myapp:1.0"
