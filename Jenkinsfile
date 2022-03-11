@@ -15,7 +15,8 @@ pipeline{
        steps{
           sh "docker build -t cmr-repo/myapp:1.0 ."
           withCredentials([string(credentialsId: 'DOCKER_HUB_CREDENTIALS', variable: 'DOCKER_HUB_CREDENTIALS')]) {
-          sh "docker login -u jhansirani408 -p ${DOCKER_HUB_CREDENTIALS}" 
+          sh "docker login -u jhansirani408 -p ${DOCKER_HUB_CREDENTIALS}"
+          sh "docker tag cmr-repo1/myapp:1.0 jhansirani408/cmr-repo1:1.0"
           sh "docker push jhansirani408/cmr-repo:1.0"
                }
              }
